@@ -65,8 +65,9 @@ namespace Praktikum_11_april
             DataTable captainKiri = new DataTable();
             DataTable stadium = new DataTable();
             DataTable capacity = new DataTable();
+            DataTable Kota = new DataTable();
 
-            sqlQuery = " SELECT t.team_name, t.team_id, t.home_stadium, t.capacity , m.manager_name, p.player_name FROM team t, manager m, player p where t.manager_id = m.manager_id and p.player_id = t.captain_id";
+            sqlQuery = " SELECT t.team_name, t.team_id, t.home_stadium,t.city, t.capacity , m.manager_name, p.player_name FROM team t, manager m, player p where t.manager_id = m.manager_id and p.player_id = t.captain_id";
 
             //sqlQuery = "select manager_name from manager m, team t where t.team_id = '" + CboxKiri.SelectedValue.ToString() + "' and m.manager_id = t.manager_id;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
@@ -75,10 +76,11 @@ namespace Praktikum_11_april
             sqlAdapter.Fill(captainKiri);
             sqlAdapter.Fill(stadium);
             sqlAdapter.Fill(capacity);
-            LbManagerKiri.Text = "Manager : " + managerKiri.Rows[CboxKiri.SelectedIndex][4].ToString();
-            LbCaptainKiri.Text = "Captain : " + captainKiri.Rows[CboxKiri.SelectedIndex][5].ToString();
-            LbStadium.Text = "Stadium : " + stadium.Rows[CboxKiri.SelectedIndex][2].ToString();
-            LbCapacity.Text = "Capacity : " + capacity.Rows[CboxKiri.SelectedIndex][3].ToString();
+            sqlAdapter.Fill(Kota);
+            LbManagerKiri.Text = "Manager : " + managerKiri.Rows[CboxKiri.SelectedIndex][5].ToString();
+            LbCaptainKiri.Text = "Captain : " + captainKiri.Rows[CboxKiri.SelectedIndex][6].ToString();
+            LbStadium.Text = "Stadium : " + stadium.Rows[CboxKiri.SelectedIndex][2] +", "+ Kota.Rows[CboxKiri.SelectedIndex][3];
+            LbCapacity.Text = "Capacity : " + capacity.Rows[CboxKiri.SelectedIndex][4].ToString();
 
 
 
@@ -90,14 +92,16 @@ namespace Praktikum_11_april
 
             DataTable managerKanan = new DataTable();
             DataTable captainKanan = new DataTable();
+             
 
-            sqlQuery = "SELECT t.team_name, t.team_id, t.home_stadium, t.capacity , m.manager_name, p.player_name FROM team t, manager m, player p where t.manager_id = m.manager_id and p.player_id = t.captain_id";
+            sqlQuery = "SELECT t.team_name, t.team_id, t.home_stadium,  t.capacity , m.manager_name, p.player_name FROM team t, manager m, player p where t.manager_id = m.manager_id and p.player_id = t.captain_id";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(managerKanan);
             sqlAdapter.Fill(captainKanan);
-            LbManagerKanan.Text = managerKanan.Rows[CboxKanan.SelectedIndex][5].ToString();
-            LbCaptainKanan.Text = captainKanan.Rows[CboxKanan.SelectedIndex][4].ToString();
+            
+            LbManagerKanan.Text = "Manager : "+ managerKanan.Rows[CboxKanan.SelectedIndex][4].ToString();
+            LbCaptainKanan.Text = "Captain : "+ captainKanan.Rows[CboxKanan.SelectedIndex][5].ToString();
 
 
 
