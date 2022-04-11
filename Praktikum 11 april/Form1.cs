@@ -55,7 +55,7 @@ namespace Praktikum_11_april
             //sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             //sqlAdapter = new MySqlDataAdapter(sqlCommand);
             //sqlAdapter.Fill(managerKiri);
-            //LbManagerKiri.Text = managerKiri.Rows[0]["manager_name"].ToString(); 
+            //LbManagerKiri.Text = managerKiri.Rows[0]["manager_name"].ToString();  
         }
 
         private void CboxKiri_SelectedIndexChanged(object sender, EventArgs e)
