@@ -127,7 +127,7 @@ namespace Praktikum_11_april
             LbTanggalFormat.Text = tanggalskor.Rows[0][0].ToString();
             LbSkorAkhir.Text = tanggalskor.Rows[0][1].ToString();
 
-
+             
 
             DataTable hasilpertandingan = new DataTable();
 
