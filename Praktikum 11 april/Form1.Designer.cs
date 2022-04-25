@@ -36,6 +36,13 @@
             this.LbCaptainKanan = new System.Windows.Forms.Label();
             this.LbStadium = new System.Windows.Forms.Label();
             this.LbCapacity = new System.Windows.Forms.Label();
+            this.LbTanggal = new System.Windows.Forms.Label();
+            this.LbSkor = new System.Windows.Forms.Label();
+            this.BtnCheck = new System.Windows.Forms.Button();
+            this.DtHasil = new System.Windows.Forms.DataGridView();
+            this.LbTanggalFormat = new System.Windows.Forms.Label();
+            this.LbSkorAkhir = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DtHasil)).BeginInit();
             this.SuspendLayout();
             // 
             // CboxKiri
@@ -96,26 +103,86 @@
             // LbStadium
             // 
             this.LbStadium.AutoSize = true;
-            this.LbStadium.Location = new System.Drawing.Point(336, 299);
+            this.LbStadium.Location = new System.Drawing.Point(334, 190);
             this.LbStadium.Name = "LbStadium";
-            this.LbStadium.Size = new System.Drawing.Size(56, 16);
+            this.LbStadium.Size = new System.Drawing.Size(62, 16);
             this.LbStadium.TabIndex = 6;
-            this.LbStadium.Text = "Stadium";
+            this.LbStadium.Text = "Stadium :";
             // 
             // LbCapacity
             // 
             this.LbCapacity.AutoSize = true;
-            this.LbCapacity.Location = new System.Drawing.Point(336, 344);
+            this.LbCapacity.Location = new System.Drawing.Point(334, 218);
             this.LbCapacity.Name = "LbCapacity";
-            this.LbCapacity.Size = new System.Drawing.Size(60, 16);
+            this.LbCapacity.Size = new System.Drawing.Size(66, 16);
             this.LbCapacity.TabIndex = 7;
-            this.LbCapacity.Text = "Capacity";
+            this.LbCapacity.Text = "Capacity :";
+            // 
+            // LbTanggal
+            // 
+            this.LbTanggal.AutoSize = true;
+            this.LbTanggal.Location = new System.Drawing.Point(334, 283);
+            this.LbTanggal.Name = "LbTanggal";
+            this.LbTanggal.Size = new System.Drawing.Size(67, 16);
+            this.LbTanggal.TabIndex = 8;
+            this.LbTanggal.Text = "Tanggal : ";
+            // 
+            // LbSkor
+            // 
+            this.LbSkor.AutoSize = true;
+            this.LbSkor.Location = new System.Drawing.Point(352, 320);
+            this.LbSkor.Name = "LbSkor";
+            this.LbSkor.Size = new System.Drawing.Size(44, 16);
+            this.LbSkor.TabIndex = 9;
+            this.LbSkor.Text = "Skor : ";
+            // 
+            // BtnCheck
+            // 
+            this.BtnCheck.Location = new System.Drawing.Point(325, 246);
+            this.BtnCheck.Name = "BtnCheck";
+            this.BtnCheck.Size = new System.Drawing.Size(75, 23);
+            this.BtnCheck.TabIndex = 10;
+            this.BtnCheck.Text = "Check";
+            this.BtnCheck.UseVisualStyleBackColor = true;
+            this.BtnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
+            // 
+            // DtHasil
+            // 
+            this.DtHasil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtHasil.Location = new System.Drawing.Point(25, 370);
+            this.DtHasil.Name = "DtHasil";
+            this.DtHasil.RowHeadersWidth = 51;
+            this.DtHasil.RowTemplate.Height = 24;
+            this.DtHasil.Size = new System.Drawing.Size(745, 196);
+            this.DtHasil.TabIndex = 11;
+            // 
+            // LbTanggalFormat
+            // 
+            this.LbTanggalFormat.AutoSize = true;
+            this.LbTanggalFormat.Location = new System.Drawing.Point(419, 283);
+            this.LbTanggalFormat.Name = "LbTanggalFormat";
+            this.LbTanggalFormat.Size = new System.Drawing.Size(0, 16);
+            this.LbTanggalFormat.TabIndex = 12;
+            // 
+            // LbSkorAkhir
+            // 
+            this.LbSkorAkhir.AutoSize = true;
+            this.LbSkorAkhir.Location = new System.Drawing.Point(419, 320);
+            this.LbSkorAkhir.Name = "LbSkorAkhir";
+            this.LbSkorAkhir.Size = new System.Drawing.Size(0, 16);
+            this.LbSkorAkhir.TabIndex = 13;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 577);
+            this.Controls.Add(this.LbSkorAkhir);
+            this.Controls.Add(this.LbTanggalFormat);
+            this.Controls.Add(this.DtHasil);
+            this.Controls.Add(this.BtnCheck);
+            this.Controls.Add(this.LbSkor);
+            this.Controls.Add(this.LbTanggal);
             this.Controls.Add(this.LbCapacity);
             this.Controls.Add(this.LbStadium);
             this.Controls.Add(this.LbCaptainKanan);
@@ -125,8 +192,8 @@
             this.Controls.Add(this.CboxKanan);
             this.Controls.Add(this.CboxKiri);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DtHasil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,6 +209,12 @@
         private System.Windows.Forms.Label LbCaptainKanan;
         private System.Windows.Forms.Label LbStadium;
         private System.Windows.Forms.Label LbCapacity;
+        private System.Windows.Forms.Label LbTanggal;
+        private System.Windows.Forms.Label LbSkor;
+        private System.Windows.Forms.Button BtnCheck;
+        private System.Windows.Forms.DataGridView DtHasil;
+        private System.Windows.Forms.Label LbTanggalFormat;
+        private System.Windows.Forms.Label LbSkorAkhir;
     }
 }
 
